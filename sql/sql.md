@@ -37,3 +37,21 @@ Performance tuning
 Index creation and maintenance
 
 Index hints
+
+
+
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE| DELETE }
+ON table_name FOR EACH ROW
+trigger_body;
+
+
+CREATE TRIGGER rong_t1
+ AFTER INSERT 
+ON employees FOR EACH ROW
+INSERT INTO offices
+ SET action = 'update',
+     officeCode = 1000,
+     city = "CC";
+SHOW TRIGGERS;
